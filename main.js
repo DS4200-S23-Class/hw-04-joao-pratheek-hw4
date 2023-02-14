@@ -34,8 +34,8 @@ function addClickBorder() {
         // store the border as missing
         border = false;
       }
-    });
-  });
+    })
+  })
 }
 
 addClickBorder();
@@ -54,7 +54,7 @@ let previousCoord = "";
 data2.forEach(circle => {circle.addEventListener("click", point => {
     
     // stores the coordinates of the circle that was clicked
-    const coordinates = `(${point.target.getAttribute("cx")}, ${point.target.getAttribute("cy")})`;
+    const coordinates = `(${point.target.getAttribute("cx") / 45}, ${Math.abs((point.target.getAttribute("cy") - 450) / 45)})`;
 
     // stores the coordinates of the circle that was clicked under a new constant
     previousCoord = coordinates;
@@ -63,3 +63,28 @@ data2.forEach(circle => {circle.addEventListener("click", point => {
     previousClicked.textContent = `Last Point Clicked: ${previousCoord}`;
   });
 });
+
+
+
+function addPoint() {
+
+    let graph = document.getElementById("frame");
+
+    let cx = document.getElementById("x-value").value;
+    let cy = document.getElementById("y-value").value;
+
+    const newPoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    newPoint.setAttribute("id", "point");
+    newPoint.setAttribute("class", "style");
+    newPoint.setAttribute("cx", cx);
+    newPoint.setAttribute("cy", cy);
+    newPoint.setAttribute("r", 10);
+
+    graph.appendChild(newPoint);
+
+}
+
+document.getElementById("subButton").addEventListener("click", addPoint);
+
+
+

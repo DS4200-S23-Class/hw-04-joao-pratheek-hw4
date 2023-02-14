@@ -38,38 +38,38 @@
                 <form id="coordinates">
                     <p>
                         <label for="x-coordinate"/>Select the x coordinate for the point you want to add:</label>
-                        <select id="coordinates" name="x-coordinate">
+                        <select id="x-value" name="x-coordinate">
                             <option value="0">0</option>
-                            <option value="45">45</option>
-                            <option value="90">90</option>
-                            <option value="135">135</option>
-                            <option value="180">180</option>
-                            <option value="225">225</option>
-                            <option value="270">270</option>
-                            <option value="315">315</option>
-                            <option value="360">360</option>
-                            <option value="405">405</option>
-                            <option value="450">450</option>
+                            <option value="45">1</option>
+                            <option value="90">2</option>
+                            <option value="135">3</option>
+                            <option value="180">4</option>
+                            <option value="225">5</option>
+                            <option value="270">6</option>
+                            <option value="315">7</option>
+                            <option value="360">8</option>
+                            <option value="405">9</option>
+                            <option value="450">10</option>
                         </select>
                     </p>
                     <p>
                         <label for="y-coordinate"/>Select the y coordinate for the point you want to add:</label>
-                        <select id="coordinates" name="y-coordinate">
-                            <option value="0">0</option>
-                            <option value="45">45</option>
-                            <option value="90">90</option>
-                            <option value="135">135</option>
-                            <option value="180">180</option>
-                            <option value="225">225</option>
-                            <option value="270">270</option>
-                            <option value="315">315</option>
-                            <option value="360">360</option>
-                            <option value="405">405</option>
-                            <option value="450">450</option>
+                        <select id="y-value" name="y-coordinate">
+                            <option value="450">0</option>
+                            <option value="405">1</option>
+                            <option value="360">2</option>
+                            <option value="315">3</option>
+                            <option value="270">4</option>
+                            <option value="225">5</option>
+                            <option value="180">6</option>
+                            <option value="135">7</option>
+                            <option value="90">8</option>
+                            <option value="45">9</option>
+                            <option value="0">10</option>
                         </select>
                     </p>
                 </form>
-                <button type="button" id="subButton">Add Point</button>
+                <button type="button" id="subButton" onClick="addPoint()">Add Point</button>
             </div>
         </div>
     </div>
