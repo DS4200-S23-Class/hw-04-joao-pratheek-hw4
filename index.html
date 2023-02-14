@@ -3,12 +3,113 @@
 
 <head>
     <meta charset=utf-8/>
+
+    <!-- link to stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- title -->
+    <title>hw-04</title>
 </head>
 
 
 <body>
 
+    <h1 class="centered">hw-04: Event Handling</h1>
 
+    <div>
+        <div class="container">
+            <div class="left-column">
+                <svg id="frame">
+                    <!-- Y-axis -->
+                    <line class="axis" x1="5" y1="5" x2="5" y2="450" />
+                    <!-- X-axis -->
+                    <line class="axis" x1="5" y1="450" x2="450" y2="450" />
+                    <circle id="point" class="style" cx="45" cy="360" r="10"/> 
+                    <circle id="point" class="style" cx="90" cy="270" r="10"/>
+                    <circle id="point" class="style" cx="270" cy="360" r="10"/>
+                    <circle id="point" class="style" cx="405" cy="45" r="10"/>
+                </svg>
+            </div>
+
+            <div class="right-column">
+                <p id="last-click">
+                    Last Point Clicked:
+                </p>
+                <form id="coordinates">
+                    <p>
+                        <label for="x-coordinate"/>Select the x coordinate for the point you want to add:</label>
+                        <select id="coordinates" name="x-coordinate">
+                            <option value="0">0</option>
+                            <option value="45">45</option>
+                            <option value="90">90</option>
+                            <option value="135">135</option>
+                            <option value="180">180</option>
+                            <option value="225">225</option>
+                            <option value="270">270</option>
+                            <option value="315">315</option>
+                            <option value="360">360</option>
+                            <option value="405">405</option>
+                            <option value="450">450</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="y-coordinate"/>Select the y coordinate for the point you want to add:</label>
+                        <select id="coordinates" name="y-coordinate">
+                            <option value="0">0</option>
+                            <option value="45">45</option>
+                            <option value="90">90</option>
+                            <option value="135">135</option>
+                            <option value="180">180</option>
+                            <option value="225">225</option>
+                            <option value="270">270</option>
+                            <option value="315">315</option>
+                            <option value="360">360</option>
+                            <option value="405">405</option>
+                            <option value="450">450</option>
+                        </select>
+                    </p>
+                </form>
+                <button type="button" id="subButton">Add Point</button>
+            </div>
+        </div>
+    </div>
+        
+    <!-- Pt.4 Acknowledgments -->
+    <h1 class="acknowledgements">
+        Acknowledgements
+        </h1>
+        <div class="sources">
+            <ul>
+                <li>
+                    <a href="https://www.w3schools.com/html/default.asp">HTML Tutorial</a>
+                </li>
+                <li>
+                    <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/graphics/svg_intro.asp">SVG Tutorial</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/css/default.asp">CSS Tutorial</a>
+                </li>
+                 <li>
+                    <a href="https://www.w3schools.com/js/js_input_examples.asp">JavaScript HTML Input Examples</a>
+                </li>
+                <li>
+                    <a href="https://www.geeksforgeeks.org/html-svg-basics/?ref=lbp">HTML SVG Basics</a>
+                </li>
+                <li>
+                    <a href="https://amosca01.github.io/DS4200-S23/slides/06-perception-color-js.pdf">Lecture 6 Slides</a>
+                </li>
+                <li>
+                    <a href="https://amosca01.github.io/DS4200-S23/slides/07-perception-gestalt-js.pdf">Lecture 7 Slides</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </body>
+
+    <!-- link to Javascript file -->
+    <script src="main.js"></script>
 
 </html>
