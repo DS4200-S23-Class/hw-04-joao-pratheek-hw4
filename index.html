@@ -14,63 +14,71 @@
 
 <body>
 
+    <!-- page header -->
     <h1 class="centered">hw-04: Event Handling</h1>
+    <!-- container div for left and right columns -->
+    <div class="container">
+        <!-- left column div -->
+        <div class="left-column">
+            <!-- svg for scatterplot -->
+            <svg id="frame">
+                <!-- x-axis line -->
+                <line class="axis" x1="5" y1="450" x2="450" y2="450" />
+                <!-- y-axis line -->
+                <line class="axis" x1="5" y1="5" x2="5" y2="450" />
+                <!-- default data points -->
+                <circle id="point" class="style" cx="45" cy="360" r="10"/> 
+                <circle id="point" class="style" cx="90" cy="270" r="10"/>
+                <circle id="point" class="style" cx="270" cy="360" r="10"/>
+                <circle id="point" class="style" cx="405" cy="45" r="10"/>
+            </svg>
+        </div>
 
-    <div>
-        <div class="container">
-            <div class="left-column">
-                <svg id="frame">
-                    <!-- Y-axis -->
-                    <line class="axis" x1="5" y1="5" x2="5" y2="450" />
-                    <!-- X-axis -->
-                    <line class="axis" x1="5" y1="450" x2="450" y2="450" />
-                    <circle id="point" class="style" cx="45" cy="360" r="10"/> 
-                    <circle id="point" class="style" cx="90" cy="270" r="10"/>
-                    <circle id="point" class="style" cx="270" cy="360" r="10"/>
-                    <circle id="point" class="style" cx="405" cy="45" r="10"/>
-                </svg>
-            </div>
-
-            <div class="right-column">
-                <p id="previous-click">
-                    Last Point Clicked:
+        <!-- right column div -->
+        <div class="right-column">
+            <!-- text for coordinate that was last clicked -->
+            <p id="previous-click">
+                Last Point Clicked:
+            </p>
+            <!-- user input of coordinates -->
+            <form id="coordinates">
+                <p>
+                    <!-- labels x-coordinate dropdown menu -->
+                    <label for="x-coordinate"/>Select the x coordinate for the point you want to add:</label>
+                    <!-- creates dropdown list for x-coordinates -->
+                    <select id="x-value" name="x-coordinate">
+                        <!-- creates options for x-coordinate dropdown menu -->
+                        <option value="45">1</option>
+                        <option value="90">2</option>
+                        <option value="135">3</option>
+                        <option value="180">4</option>
+                        <option value="225">5</option>
+                        <option value="270">6</option>
+                        <option value="315">7</option>
+                        <option value="360">8</option>
+                        <option value="405">9</option>
+                    </select>
                 </p>
-                <form id="coordinates">
-                    <p>
-                        <label for="x-coordinate"/>Select the x coordinate for the point you want to add:</label>
-                        <select id="x-value" name="x-coordinate">
-                            <option value="0">0</option>
-                            <option value="45">1</option>
-                            <option value="90">2</option>
-                            <option value="135">3</option>
-                            <option value="180">4</option>
-                            <option value="225">5</option>
-                            <option value="270">6</option>
-                            <option value="315">7</option>
-                            <option value="360">8</option>
-                            <option value="405">9</option>
-                            <option value="450">10</option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="y-coordinate"/>Select the y coordinate for the point you want to add:</label>
-                        <select id="y-value" name="y-coordinate">
-                            <option value="450">0</option>
-                            <option value="405">1</option>
-                            <option value="360">2</option>
-                            <option value="315">3</option>
-                            <option value="270">4</option>
-                            <option value="225">5</option>
-                            <option value="180">6</option>
-                            <option value="135">7</option>
-                            <option value="90">8</option>
-                            <option value="45">9</option>
-                            <option value="0">10</option>
-                        </select>
-                    </p>
-                </form>
-                <button type="button" id="subButton" onClick="addPoint()">Add Point</button>
-            </div>
+                <p>
+                    <!-- labels y-coordinate dropdown menu -->
+                    <label for="y-coordinate"/>Select the y coordinate for the point you want to add:</label>
+                    <!-- creates dropdown list for y-coordinates -->
+                    <select id="y-value" name="y-coordinate">
+                        <!-- creates options for y-coordinate dropdown menu -->
+                        <option value="405">1</option>
+                        <option value="360">2</option>
+                        <option value="315">3</option>
+                        <option value="270">4</option>
+                        <option value="225">5</option>
+                        <option value="180">6</option>
+                        <option value="135">7</option>
+                        <option value="90">8</option>
+                        <option value="45">9</option>
+                    </select>
+                </p>
+            </form>
+            <!-- creates button to add new point to scatterplot -->
+            <button type="button" id="subButton" onClick="addPoint()">Add Point</button>
         </div>
     </div>
         
@@ -78,6 +86,7 @@
     <h1 class="acknowledgements">
         Acknowledgements
         </h1>
+        <!-- source links div -->
         <div class="sources">
             <ul>
                 <li>

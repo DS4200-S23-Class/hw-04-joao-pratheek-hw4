@@ -6,6 +6,7 @@ body {
 
 .centered {
 	text-align: center;
+	font-size: 36px;
 }
 
 .container {
@@ -43,4 +44,5 @@ body {
 
 .acknowledgements {
 	text-align: center;
+	font-size: 24px;
 }
