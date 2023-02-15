@@ -1,24 +1,26 @@
 // JS File for hw-04
 // Joao Pedro & Pratheek
-// Last modified: 2.13.23
+// Last modified: 2.15.23
 
 // adds or removes a border to a circle when clicked 
 function clickBorder() {
 
 	// selects all circles within the SVG
-	// and stores them in a const
+	// and stores them as a constant
 	const data = document.querySelectorAll("circle");
 
 	// calls the function for each circle in the SVG
 	data.forEach(function(circle) {
     
 	// stores circle's borders in a variable and initially sets them as missing
-    var border = false;
+    let border = false;
 
     // adds a "click" event listener to the function 
     circle.addEventListener("click", function() {
 
-    	// if there's no border on a circle
+    	// checks to see if there's no border
+    	// if no border (not false = true), enters the if statement
+    	// and adds a border 
     	if (!border) {
     	// add a black border
         circle.setAttribute("stroke", "black");
@@ -45,13 +47,13 @@ clickBorder();
 const previousClicked = document.getElementById("previous-click");
 
 // selects all circles within the SVG
-// and stores them in a const
+// and stores them as a constant
 const data2 = document.querySelectorAll("circle");
 
 // sets the previous coordinate as blank before any clicks
 let previousCoord = "";
 
-// adds a "click" event listener for each circle in the SVG
+// adds a "click" event listener for each existing circle in the SVG
 data2.forEach(circle => {circle.addEventListener("click", point => {
     
     // stores the coordinates of the circle that was clicked as a constant
@@ -70,16 +72,16 @@ data2.forEach(circle => {circle.addEventListener("click", point => {
 function addPoint() {
 
 	// grabs the frame of the scatterplot
-    let graph = document.getElementById("frame");
+    const graph = document.getElementById("frame");
 
-    // grabs the x-coordinate of a point
-    let cx = document.getElementById("x-value").value;
+    // stores the x-coordinate of a point within the dropdown menu
+    const cx = document.getElementById("x-value").value;
 
-    // grabs the y-coordinate of a point
-    let cy = document.getElementById("y-value").value;
+    // stores the y-coordinate of a point within the dropdown menu
+    const cy = document.getElementById("y-value").value;
 
-    // creates a new data point as a circle and stores it as a constant
-    const newPoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    // creates a new data point as a circle
+    let newPoint = document.createElementNS("http://www.w3.org/2000/svg", "circle");
 
     // gives the new data point the id "point"
     newPoint.setAttribute("id", "point");
@@ -92,14 +94,17 @@ function addPoint() {
     // gives the new data point a radius of 10
     newPoint.setAttribute("r", 10);
 
-    // appends the new data point to the scatterplot
+    // appends the new data point to the svg frame
     graph.appendChild(newPoint);
 
-    var border = false;
+    let border = false;
 
+    // adds a "click" event listener to the function for new points
     newPoint.addEventListener("click", function() {
     	
-    	// if there's no border on a new data point
+    	// checks to see if there's no border
+    	// if no border (not false = true), enters the if statement
+    	// and adds a border
     	if (!border) {
     	// add a black border
         newPoint.setAttribute("stroke", "black");
@@ -129,8 +134,8 @@ function addPoint() {
 		// stores the coordinates of the new data point that was clicked as a constant
 		const coordinates = `(${point.target.getAttribute("cx") / 45}, ${Math.abs((point.target.getAttribute("cy") - 450) / 45)})`;
 
-		// stores the coordinates of the new data point that was clicked under a new constant
-		previousCoord = coordinates
+		// updates blank coordinates with coordinates of new data point
+		previousCoord = coordinates;
 
 		// adds the coordinates of the new data point that was clicked to the "Last Point Clicked" text constant
 		previousClicked.textContent = `Last Point Clicked: ${previousCoord}`;
